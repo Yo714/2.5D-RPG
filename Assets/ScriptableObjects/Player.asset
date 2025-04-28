@@ -17,5 +17,5 @@ MonoBehaviour:
   BaseHealth: 10
   BaseStr: 5
   BaseInitiative: 5
-  MemberBattleVisualPrefab: {fileID: 0}
+  MemberBattleVisualPrefab: {fileID: 1225463360397656262, guid: 3b9ccfcd5e73ee448b2e85426b646af9, type: 3}
   MemberOverworldVisualPrefab: {fileID: 0}
