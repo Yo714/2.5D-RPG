@@ -19,7 +19,7 @@ public class BattleVisuals : MonoBehaviour
     private const string IS_HIT_PARAM = "IsHit";
     private const string IS_DEAD_PARAM = "IsDead";
 
-    void Start()
+    void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
     }
