@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1564110673058442577}
   - component: {fileID: 8110231826620372126}
   - component: {fileID: 7850758346290116340}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EnemyBattleVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8128180716446234672}
   - component: {fileID: 7593618804369972332}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Idle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

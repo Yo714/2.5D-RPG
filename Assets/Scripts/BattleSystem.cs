@@ -62,7 +62,7 @@ public class BattleSystem : MonoBehaviour
 
         for (int i = 0; i < allBattlers.Count; i++)
         {
-            if (state == BattleState.Battle)
+            if (state == BattleState.Battle && allBattlers[i].CurrHealth > 0)
             {
                 switch (allBattlers[i].BattleAction)
                 {
@@ -79,6 +79,8 @@ public class BattleSystem : MonoBehaviour
             }
         }
 
+        RemoveDeadBattlers();
+
         if (state == BattleState.Battle)
         {
             bottomTextPopUp.SetActive(false);
@@ -94,7 +96,7 @@ public class BattleSystem : MonoBehaviour
         if (allBattlers[i].IsPlayer == true)
         {
             BattleEntities currAttacker = allBattlers[i];
-            if (allBattlers[currAttacker.Target].IsPlayer == true || currAttacker.Target >= allBattlers.Count)
+            if (allBattlers[currAttacker.Target].CurrHealth <= 0)
             {
                 currAttacker.SetTartget(GetRanomEnemy());
             }
@@ -107,7 +109,6 @@ public class BattleSystem : MonoBehaviour
                 bottomText.text = string.Format("{0} defeated {1}", currAttacker.Name, currTarget.Name);
                 yield return new WaitForSeconds(TURN_DURATION);
                 enemyBattlers.Remove(currTarget);
-                allBattlers.Remove(currTarget);
 
                 if (enemyBattlers.Count <= 0)
                 {
@@ -133,7 +134,6 @@ public class BattleSystem : MonoBehaviour
                 bottomText.text = string.Format("{0} defeated {1}", currAttacker.Name, currTarget.Name);
                 yield return new WaitForSeconds(TURN_DURATION);
                 playerBattlers.Remove(currTarget);
-                allBattlers.Remove(currTarget);
 
                 if (playerBattlers.Count <= 0)
                 {
@@ -160,7 +160,7 @@ public class BattleSystem : MonoBehaviour
     private void CreatePartyEntities()
     {
         List<PartyMember> currentParty = new List<PartyMember>();
-        currentParty = partyManager.GetCurrentParty();
+        currentParty = partyManager.GetAliveParty();
 
         for (int i = 0; i < currentParty.Count; i++)
         {

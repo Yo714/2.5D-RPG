@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 5093943514404709766}
   - component: {fileID: 3288024786005837853}
   - component: {fileID: 785506662197701034}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PlayerBattleVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7630980932885640789}
   - component: {fileID: 3778543119516252551}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HeroKnight_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

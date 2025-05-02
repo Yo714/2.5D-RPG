@@ -74,8 +74,10 @@
     <Compile Include="Assets\Scripts\PartyMemberInfo.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\Scripts\PartyManager.cs" />
+    <Compile Include="Assets\Scripts\JoinableCharacter.cs" />
     <Compile Include="Assets\Settings\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\EnemyInfo.cs" />
+    <Compile Include="Assets\Scripts\CharacterManager.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\Input Settings\PlayerControls.cs" />
   </ItemGroup>
