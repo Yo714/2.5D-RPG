@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private Animator anim;
-    [SerializeField] private SpriteRenderer playerRenderer;
+    [SerializeField] private SpriteRenderer playerSprite;
     [SerializeField] private LayerMask grassLayer;
     [SerializeField] private int stepsInGrass;
     [SerializeField] private int minStepsToEncounter;
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float stepTimer;
     private int stepsToEncounter;
     private PartyManager partyManager;
+    private Vector3 scale;
 
     private const string IS_RUN_PARAM = "IsRun";
     private const string BATTLE_SCENE = "BattleScene";
@@ -66,11 +67,11 @@ public class PlayerController : MonoBehaviour
 
         if(x!= 0 && x < 0)
         {
-            playerRenderer.flipX = true;
+            playerSprite.transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
         }
         else if(x!= 0 && x > 0)
         {
-            playerRenderer.flipX = false;
+            playerSprite.transform.localScale = new Vector3(scale.x, scale.y, scale.z);
         }
     }
 
@@ -102,5 +103,12 @@ public class PlayerController : MonoBehaviour
     private void CalculateStepsToEncounter()
     {
         stepsToEncounter = Random.Range(minStepsToEncounter, maxStepsToEncounter);
+    }
+
+    public void SetOverworldVisuals(Animator animator, SpriteRenderer spriteRenderer, Vector3 playerScale)
+    {
+        anim = animator;
+        playerSprite = spriteRenderer;
+        scale = playerScale;
     }
 }

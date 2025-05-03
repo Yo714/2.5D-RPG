@@ -66,20 +66,18 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\EncounterSystem.cs" />
     <Compile Include="Assets\Scripts\BattleSystem.cs" />
+    <Compile Include="Assets\Scripts\AnimationHelper.cs" />
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
-    <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
     <Compile Include="Assets\Scripts\BattleVisuals.cs" />
     <Compile Include="Assets\Scripts\PartyMemberInfo.cs" />
-    <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\Scripts\PartyManager.cs" />
     <Compile Include="Assets\Scripts\JoinableCharacter.cs" />
     <Compile Include="Assets\Settings\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\EnemyInfo.cs" />
     <Compile Include="Assets\Scripts\CharacterManager.cs" />
-    <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\Input Settings\PlayerControls.cs" />
+    <Compile Include="Assets\Scripts\MemberFollowAI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -105,7 +103,6 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Sprites\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
