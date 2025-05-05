@@ -12,9 +12,11 @@ public class CharacterManager : MonoBehaviour
     private GameObject joinableMember;
     private PlayerControls playerControls;
     private List<GameObject> overworldCharacters = new List<GameObject>();
+    private GameObject interactItem;
 
     private const string PARTY_JOINED_MESSAGE = " Joined The Party!";
     private const string NPC_JOINABLE_TAG = "NPCJoinable";
+    private const string INTERACT_ITEM_TAG = "InteractItem";
     
     private void Awake()
     {
@@ -44,6 +46,10 @@ public class CharacterManager : MonoBehaviour
             MemberJoined(joinableMember.GetComponent<JoinableCharacter>().MemberToJoin);
             infrontOfPartyMember = false;
             joinableMember = null;
+        }
+        else if(interactItem != null)
+        {
+            interactItem.GetComponent<InteractItem>().Interact();
         }
     }
 
@@ -104,6 +110,11 @@ public class CharacterManager : MonoBehaviour
             joinableMember = other.gameObject;
             joinableMember.GetComponent<JoinableCharacter>().ShowInteractPrompt(true);
         }
+        else if(other.gameObject.tag == INTERACT_ITEM_TAG)
+        {
+            interactItem = other.gameObject;
+            interactItem.GetComponent<InteractItem>().ShowInteractPrompt(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -114,6 +125,20 @@ public class CharacterManager : MonoBehaviour
             joinableMember.GetComponent<JoinableCharacter>().ShowInteractPrompt(false);
             joinableMember = null;
         }
+        else if(other.gameObject.tag == INTERACT_ITEM_TAG)
+        {
+            interactItem.GetComponent<InteractItem>().ShowInteractPrompt(false);
+            interactItem = null;
+        }
     }
 
+    public GameObject GetJoinPopup()
+    {
+        return joinPopup;
+    }
+
+    public TextMeshProUGUI GetJoinPopupText()
+    {
+        return joinPopupText;
+    }
 }
